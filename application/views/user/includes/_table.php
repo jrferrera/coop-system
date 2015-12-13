@@ -29,10 +29,11 @@
 					<a href="#delete-user-modal" class="btn btn-danger btn-sm delete-user-button" data-toggle="modal" data-id="<?php echo $user->id; ?>"><i class="icon-remove"></i> Delete</a>
 				</td>
 			</tr>
+			<?php $count++; ?>
 		<?php endforeach; ?>
 	<?php }else { ?>
 		<tr>
-			<td colspan="8">No user record.</td>
+			<td colspan="9">No user record.</td>
 		</tr>
 	<?php } ?>
 </table>

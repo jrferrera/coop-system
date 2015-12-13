@@ -17,3 +17,6 @@
 <?php $this->load->view('user/modals/_delete'); ?>
 
 <script type="text/javascript" src="<?php echo base_url('assets/js/user/index.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/user/_add.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/user/_edit.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/user/_delete.js'); ?>"></script>

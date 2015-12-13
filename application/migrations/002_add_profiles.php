@@ -30,7 +30,7 @@ class Migration_Add_Profiles extends CI_Migration {
 								),
 					'created_at' => array(
 									'type' => 'DATETIME',
-									'default' => date('Y-m-d H:i:s', time())
+									'default' => NULL
 								),
 					'updated_at' => array(
 									'type' => 'DATETIME',

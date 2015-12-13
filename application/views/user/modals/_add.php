@@ -9,13 +9,7 @@
           <h4 class="modal-title">Add User</h4>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <div class="col-md-8">
-              <div id="add-user-notification" role="alert">
-                <strong><span class="notification-icon glyphicon"></span></strong> <span class="message"></span>
-              </div>
-            </div>
-          </div>
+          <?php $this->load->view('includes/_ajax_notification', array('id' => 'add-user-notification')); ?>
           
           <div class="row">
             <div class="col-md-8 col-md-offset-2">

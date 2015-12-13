@@ -22,18 +22,42 @@ class User extends Core_Controller {
 
 	public function get() {
 		$id = $this->input->post('id');
-		$response['user'] = $this->user->get_by_id($id);
+		$response = $this->user->get_by_id($id);
 
 		echo json_encode($response);
 	}
 
 	public function add() {
 		if($this->user->create($this->input->post())) {
-			$response['message'] = 'success';
-			$response['messageType'] = 'Successfully added a user.';
+			$response['messageType'] = 'success';
+			$response['message'] = 'Successfully added a user.';
 		}else {
-			$response['message'] = 'error';
-			$response['messageType'] = 'Failed to add user.';
+			$response['messageType'] = 'error';
+			$response['message'] = 'Failed to add user.';
+		}
+
+		echo json_encode($response);
+	}
+
+	public function edit() {
+		if($this->user->update($this->input->post())) {
+			$response['messageType'] = 'success';
+			$response['message'] = 'Successfully edited a user.';
+		}else {
+			$response['messageType'] = 'error';
+			$response['message'] = 'Failed to edit user.';
+		}
+
+		echo json_encode($response);
+	}
+
+	public function delete() {
+		$id = $this->input->post('id');
+
+		if($this->user->delete($id)) {
+			$response['message'] = 'Successfully delete user.';
+		}else {
+			$response['message'] = 'Failed to delete user.';
 		}
 
 		echo json_encode($response);
