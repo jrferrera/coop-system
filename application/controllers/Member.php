@@ -1,18 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends Core_Controller {
+class Member extends Core_Controller {
 	public function __construct() {
 		parent::__construct();
 
-		$this->class = 'home';
+		$this->class = 'member';
 
-		$this->check_session();
+		$this->load->model('member');
 	}
 
 	public function index() {
-		$this->title = 'Home';
-		$this->template = 'home';
+		$this->title = 'Member';
+		$this->template = 'member/index';
 
 		$this->render_page();
 	}

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Core_Controller extends CI_Controller {
 	protected $app_name		= 'Coop System ';
 	protected $title		= '';
-	protected $class		= 'session';
+	protected $class		= '';
 	protected $template		= NULL;
 	protected $body_data	= array();
 	protected $data	= array();
@@ -14,15 +14,13 @@ class Core_Controller extends CI_Controller {
 	}
 
 	public function check_session() {
-		if(isset($this->session->userdata->login)) {
-			redirect('home');
-		}else {
-			redirect('session/create');
+		if(!$this->session->login) {
+			redirect('sessions');
 		}
 	}
 
 	public function render_page() {
-		$header = $this->load->view('/includes/_header', array(), TRUE);
+		$header = $this->load->view('/includes/_header', array('class' => $this->class), TRUE);
 		$body = $this->load->view($this->template, $this->data, TRUE);
 		$footer = $this->load->view('/includes/_footer', array(), TRUE);
 

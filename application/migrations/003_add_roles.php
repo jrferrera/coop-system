@@ -8,9 +8,15 @@ class Migration_Add_Roles extends CI_Migration {
 								'type' => 'INT',
 								'auto_increment' => TRUE
 							),
+					'user_id' => array(
+								'type' => 'INT'
+							),
 					'position' => array(
 								'type' => 'VARCHAR',
 								'constraint' => 100
+							),
+					'permissions' => array(
+								'type' => 'TEXT'
 							),
 					'created_at' => array(
 									'type' => 'DATETIME',
