@@ -1,0 +1,12 @@
+#header-container {
+	height: 50px;
+}
+
+#footer-container {
+	text-align: center;
+	color: white;
+}
+
+#footer .container-fluid {
+	margin-top: 15px;
+}
